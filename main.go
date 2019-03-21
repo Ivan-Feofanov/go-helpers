@@ -1,9 +1,8 @@
-package go_helpers
+package gh
 
 import (
 	"io"
 	"log"
-	"os"
 )
 
 func Close(c io.Closer) {
@@ -11,12 +10,4 @@ func Close(c io.Closer) {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func GetEnv(key string, def string) string {
-	env := os.Getenv(key)
-	if len(env) == 0 {
-		return def
-	}
-	return env
 }
